@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nums = [];
+    for (let i = 0; i < 100; ++i) {
+        nums[i] = Math.floor(Math.random() * 101);
+    }
+    let numsLength = nums.length;
+
+    function dispArr(nums) {
+        for (let i = 0; i < numsLength; ++i) {
+            document.write(nums[i] + " ");
+            if (i % 10 == 9) {
+                document.write('<br>')
+
+            }
+        }
+    }
+    dispArr(nums);
+    //    gọi lại hàm để hàm hiển thị
+    console.log(nums)
+
+
+
+    function findMin(nums) {
+        let min = nums[0];
+
+        for (let i = 1; i < numsLength; ++i) {
+            if (nums[i] < min) {
+                min = nums[i];
+            }
+        }
+        return min;
+    //    trả về giá trị min sau khi hàm thực thi
+    }
+
+    function findMax(nums) {
+        let max = nums[0];
+
+        for (let i = 1; i < numsLength; ++i) {
+            if (nums[i] > max) {
+                max = nums[i];
+            }
+        }
+        return max;
+    }
+
+    let minValue = findMin(nums);
+    //gọi lại hàm truyền giá trị đã retun vào biến
+    console.log("The minimum value is: " + minValue);
+
+    let maxValue = findMax(nums);
+    //gọi lại hàm truyền giá trị đã retun vào biến
+    console.log("The maximum value is: " + maxValue);
+</script>
+</html>
